@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jerome Rivera | IT Support Portfolio</title>
+<meta name="description" content="Jerome Rivera — BSIT Graduate, IT Support and Technical Support Portfolio">
+<style>
+:root{
+  --bg:#0b1020; --card:#121a2d; --card2:#17223a; --text:#eef3ff;
+  --muted:#aab6cf; --accent:#66d9ff; --accent2:#8b7cff; --line:#263451;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:fixed;top:0;left:0;width:100%;z-index:20;background:rgba(11,16,32,.86);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:1.2rem}.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:25px;font-size:.93rem;color:var(--muted)}
+.nav-links a:hover{color:var(--accent)}
+.menu{display:none;background:none;border:0;color:white;font-size:1.5rem}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 70px;
+background:radial-gradient(circle at 80% 20%,rgba(102,217,255,.14),transparent 32%),
+radial-gradient(circle at 20% 80%,rgba(139,124,255,.12),transparent 30%)}
+.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:60px;align-items:center}
+.badge{display:inline-block;padding:7px 13px;border:1px solid var(--line);border-radius:999px;color:var(--accent);background:rgba(102,217,255,.05);font-size:.85rem;margin-bottom:18px}
+h1{font-size:clamp(3rem,7vw,5.6rem);line-height:.98;letter-spacing:-.05em}
+.gradient{background:linear-gradient(90deg,var(--accent),#a795ff);-webkit-background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:1.08rem;max-width:650px;margin:25px 0}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 18px;border-radius:10px;border:1px solid var(--line);font-weight:700}
+.btn.primary{background:var(--accent);color:#06101a;border-color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+.profile-card{background:linear-gradient(145deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:24px;padding:28px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.avatar{width:180px;height:180px;border-radius:50%;margin:0 auto 20px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#08101d;font-size:4rem;font-weight:900}
+.profile-card h3{font-size:1.3rem}.profile-card p{font-size:.9rem;margin:5px auto 0}
+section{padding:95px 0}
+.section-head{margin-bottom:35px}.eyebrow{color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
+h2{font-size:2.3rem;margin-top:5px}
+.section-head p{color:var(--muted);max-width:700px;margin-top:8px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:25px}
+.card p{color:var(--muted)}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.skill{padding:8px 12px;background:var(--card2);border:1px solid var(--line);border-radius:8px;font-size:.9rem}
+.project-feature{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;background:linear-gradient(145deg,#141f37,#10182a);border:1px solid var(--line);border-radius:22px;padding:30px}
+.project-visual{min-height:300px;border-radius:15px;background:
+linear-gradient(135deg,rgba(102,217,255,.18),rgba(139,124,255,.12)),
+repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0 2px,transparent 2px 10px);
+display:grid;place-items:center;border:1px solid var(--line)}
+.project-visual div{text-align:center}.project-visual strong{display:block;font-size:2rem}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.tag{font-size:.78rem;color:var(--accent);border:1px solid #31546a;padding:5px 9px;border-radius:999px}
+.list{margin:18px 0 0 18px;color:var(--muted)}.list li{margin:7px 0}
+.projects-grid,.timeline-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.small-project h3{margin-bottom:7px}.small-project p{font-size:.93rem}
+.timeline{position:relative;padding-left:28px;border-left:2px solid var(--line)}
+.timeline-item{position:relative;margin-bottom:30px}.timeline-item:before{content:"";position:absolute;left:-37px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--bg)}
+.timeline-item h3{font-size:1.15rem}.timeline-item .date{color:var(--accent);font-size:.8rem;font-weight:700}.timeline-item p{color:var(--muted);margin-top:7px}
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cert{min-height:150px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(145deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:16px;padding:20px}
+.cert .icon{font-size:2rem;margin-bottom:auto}.cert p{color:var(--muted);font-size:.9rem}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-item{display:block;padding:18px;background:var(--card);border:1px solid var(--line);border-radius:13px;margin:10px 0;color:var(--muted)}
+.contact-item strong{display:block;color:var(--text)}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);text-align:center;font-size:.9rem}
+@media(max-width:800px){
+ .nav-links{display:none}.menu{display:block}
+ .hero-grid,.about-grid,.project-feature,.contact{grid-template-columns:1fr}
+ .projects-grid,.timeline-grid,.certs{grid-template-columns:1fr}
+ h1{font-size:3.5rem}.hero{padding-top:110px}
+}
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #08101d;
+  font-size: 4rem;
+  font-weight: 900;
+  overflow: hidden; /* Clips the inner image to the rounded border */
+  border: 3px solid var(--accent);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Prevents stretching or distortion */
+  display: block;
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a href="#home" class="logo">JR<span>.</span></a>
+    <button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+      <a href="#experience">OJT</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div>
+   <span class="badge">BSIT Graduate • Open to IT Opportunities</span>
+   <h1>Hi, I'm <span class="gradient">Jerome Rivera.</span></h1>
+   <p>IT Support and Technical Support-focused BSIT graduate with hands-on experience in computer configuration, troubleshooting, Windows installation, hardware maintenance, networking, and cybersecurity projects.</p>
+   <div class="buttons">
+    <a class="btn primary" href="#projects">View My Projects</a>
+    <a class="btn" href="#contact">Contact Me</a>
+   </div>
+  </div>
+  <div class="profile-card">
+   <div class="avatar">
+    <img src="image/profile.jpg" alt="Jerome Rivera">
+</div>
+   <h3>IT Support / Technical Support</h3>
+   <p>Computer Hardware • Networking • Troubleshooting • Cybersecurity</p>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">About Me</div><h2>Turning technical problems into practical solutions.</h2></div>
+  <div class="about-grid">
+   <div class="card"><p>I am a Bachelor of Science in Information Technology graduate interested in building my career in IT support, technical support, help desk, service desk, and entry-level IT roles.</p><p style="margin-top:15px">My OJT gave me real-world exposure to Windows installation, PC assembly, SSD replacement, hardware testing, inventory, TCP/IP, IP addressing, and basic fiber optic splicing.</p></div>
+   <div class="card" id="skills"><h3>Core Skills</h3><div class="skills">
+    <span class="skill">Technical Support</span><span class="skill">Hardware Troubleshooting</span><span class="skill">Software Troubleshooting</span><span class="skill">Windows 11</span><span class="skill">PC Assembly</span><span class="skill">Computer Configuration</span><span class="skill">TCP/IP</span><span class="skill">IP Addressing</span><span class="skill">Fiber Optics</span><span class="skill">Fusion Splicing</span><span class="skill">C#</span><span class="skill">Unity</span><span class="skill">Blender</span><span class="skill">MS Office</span><span class="skill">Canva</span>
+   </div></div>
+  </div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Featured Project</div><h2>Cyber-Cipher</h2><p>A 3D cybersecurity awareness simulation game created as an academic capstone project.</p></div>
+  <div class="project-feature">
+   <div class="project-visual"><div><strong>CYBER-CIPHER</strong><span>3D Cybersecurity Awareness Game</span></div></div>
+   <div>
+    <h3>Interactive cybersecurity learning</h3>
+    <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Blender</span><span class="tag">3D</span></div>
+    <p style="color:var(--muted)">Collaborated with three teammates to develop an interactive game that teaches users about common cybersecurity threats through scenarios, puzzles, assessments, and feedback.</p>
+    <ul class="list">
+     <li>Character selection and player progression</li>
+     <li>Pre-test and post-test assessment</li>
+     <li>Phishing, password security, malware and social engineering scenarios</li>
+     <li>DDoS defense and final challenge</li>
+     <li>Progress saving/loading and interactive feedback</li>
+    </ul>
+   </div>
+  </div>
+  <div class="projects-grid" style="margin-top:20px">
+   <div class="card small-project"><h3>Quick Scan QR Ordering System</h3><p>A QR-based ordering system with digital menu viewing, order confirmation, out-of-stock handling, order status management, and reports.</p></div>
+   <div class="card small-project"><h3>Geline Apparel Website</h3><p>An apparel website concept focused on product presentation and a user-friendly online shopping experience.</p></div>
+   <div class="card small-project"><h3>Clinix QR Checklist</h3><p>A clinic QR checklist concept designed to simplify and organize checklist-related processes.</p></div>
+   <div class="card small-project"><h3>Lineswift Queueing System</h3><p>A queue management concept designed to improve the organization of student service queues.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="experience">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Hands-on Experience</div><h2>IT OJT — Taguig City Hall</h2><p>Practical exposure to system administration, hardware support, and networking.</p></div>
+  <div class="timeline">
+   <div class="timeline-item"><span class="date">IT SUPPORT</span><h3>Windows Installation & Configuration</h3><p>Installed and configured Windows 11, performed basic system troubleshooting, and tested systems after configuration.</p></div>
+   <div class="timeline-item"><span class="date">HARDWARE</span><h3>PC Assembly & SSD Replacement</h3><p>Assembled and disassembled desktop computers, replaced an SSD to improve performance, and performed hardware testing and stress tests.</p></div>
+   <div class="timeline-item"><span class="date">DEPLOYMENT</span><h3>Hardware Inventory</h3><p>Assisted with inventory and checking of computer hardware delivered to multiple schools.</p></div>
+   <div class="timeline-item"><span class="date">NETWORKING</span><h3>TCP/IP & Fiber Optic Splicing</h3><p>Reviewed TCP/IP and IP addressing concepts and gained hands-on experience connecting fiber optic cables using a fusion splicer.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="certificates">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Achievements</div><h2>Certificates & Training</h2><p>Replace these cards with your actual certificate images and details.</p></div>
+  <div class="certs">
+   <div class="cert"><div class="icon">🏆</div><h3>College Fair</h3><p>Certificate • 2025–2026</p></div>
+   <div class="cert"><div class="icon">🎓</div><h3>Symposium</h3><p>Certificate • 2025–2026</p></div>
+   <div class="cert"><div class="icon">📜</div><h3>Additional Training</h3><p>Add your certificate or seminar here.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Contact</div><h2>Let's connect.</h2><p>I'm open to entry-level opportunities in IT support and technical support.</p></div>
+  <div class="contact">
+   <div>
+    <a class="contact-item" href="mailto:YOUR_EMAIL@example.com"><strong>Email</strong>riverajerome398@gmail.com</a>
+    <a class="contact-item" href="https://www.linkedin.com/" target="_blank"><strong>LinkedIn</strong>www.linkedin.com/in/
+jerome-rivera-a530a13a7
+</a>
+   </div>
+   <div>
+    <a class="contact-item" href="https://github.com/" target="_blank"><strong>GitHub</strong>Add your GitHub profile</a>
+    <div class="contact-item"><strong>Location</strong>Taguig City, Philippines</div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="container">© 2026 Jerome Rivera. Built as a personal IT portfolio.</div></footer>
+
+<script>
+function toggleMenu(){
+ const n=document.getElementById('navLinks');
+ n.style.display=n.style.display==='flex'?'none':'flex';
+ n.style.flexDirection='column';
+ n.style.position='absolute';
+ n.style.top='72px';
+ n.style.right='4%';
+ n.style.background='#121a2d';
+ n.style.padding='18px';
+ n.style.border='1px solid #263451';
+ n.style.borderRadius='12px';
+}
+
+</script>
+</body>
+</html>
